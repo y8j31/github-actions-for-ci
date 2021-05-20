@@ -7,7 +7,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
+    needs: build
       - uses: actions/checkout@v2
       - name: npm install and build webpack
         run: |
@@ -39,5 +39,4 @@ jobs:
         npm test
       env:
         CI: true
-
 
